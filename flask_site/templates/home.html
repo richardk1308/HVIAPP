@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+	<title>Our Team</title>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+
+<link href="css/team.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <br><br><br><br><br><br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://image.flaticon.com/icons/svg/1085/1085747.svg" >
+
+                    </div>
+                    <div class="team-content">
+                        <h3>Application</h3>
+                        <span class="post"> Trained model </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="{{ url_for('data') }}"><img src="https://image.flaticon.com/icons/svg/149/149668.svg" width="35" height="35"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://image.flaticon.com/icons/svg/1252/1252461.svg" >
+
+                    </div>
+                    <div class="team-content">
+                        <h3>Downloads</h3>
+                        <span class="post"> Files for download </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="{{ url_for('downloads') }}"><img src="https://image.flaticon.com/icons/svg/149/149668.svg" width="35" height="35"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="https://image.flaticon.com/icons/svg/3/3711.svg" >
+
+                    </div>
+                    <div class="team-content">
+                        <h3>About</h3>
+                        <span class="post"> Information about our team </span>
+                    </div>
+                    <ul class="social">
+                        <li><a href="{{ url_for('about') }}"><img src="https://image.flaticon.com/icons/svg/149/149668.svg" width="35" height="35"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+
+{% endblock content %}

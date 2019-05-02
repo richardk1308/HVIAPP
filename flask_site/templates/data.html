@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                
+                        <div class="form-group">
+                            <!----{{ form.Location.label(class="form-control-label") }}-->
+                            <!----{{ form.Location(class="form-control form-control-sm") }}-->
+                            <select name="Location" size="4" id="Location">
+                                <option value="Albury">Albury</option>   
+                                <option value="BadgerysCreek">Badgerys Creek</option>
+                                <option value="Cobar">Cobar</option>
+                                <option value="CoffsHarbour">Coffs Harbour</option>
+                            </select> 
+
+                            <label>Result: </label>
+                        </div>
+                    <div class="row">
+                        <div class="col-md-4">      
+                            {{ form.MinTemp.label(class="form-control-label", id="MinTemp") }}
+                            {{ form.MinTemp(class="form-control form-control-sm") }}
+                        </div> 
+                        <div class="col-md-4">
+                            {{ form.MaxTemp.label(class="form-control-label", id="MaxTemp") }}
+                            {{ form.MaxTemp(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.Rainfall.label(class="form-control-label", id="Rainfall") }}
+                            {{ form.Rainfall(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.WindGustDir.label(class="form-control-label", id="WindGustDir") }}
+                                {{ form.WindGustDir(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.WindGustSpeed.label(class="form-control-label", id="WindGustSpeed") }}
+                                {{ form.WindGustSpeed(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.WindDir9am.label(class="form-control-label", id="WindDir9am") }}
+                                {{ form.WindDir9am(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.WindDir3pm.label(class="form-control-label", id="WindDir3pm") }}
+                                {{ form.WindDir3pm(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.WindSpeed9am.label(class="form-control-label", id="WindSpeed9am") }}
+                                {{ form.WindSpeed9am(class="form-control form-control-sm") }}
+                            </div>
+                        <div class="col-md-4">
+                                {{ form.WindSpeed3pm.label(class="form-control-label", id="WindSpeed3pm") }}
+                                {{ form.WindSpeed3pm(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Humidity9am.label(class="form-control-label", id="Humidity9am") }}
+                                {{ form.Humidity9am(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Humidity3pm.label(class="form-control-label", id="Humidity3pm") }}
+                                {{ form.Humidity3pm(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Pressure9am.label(class="form-control-label", id="Pressure9am") }}
+                                {{ form.Pressure9am(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Pressure3pm.label(class="form-control-label", id="Pressure3pm") }}
+                                {{ form.Pressure3pm(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Temp9am.label(class="form-control-label", id="Temp9am") }}
+                                {{ form.Temp9am(class="form-control form-control-sm") }}
+                        </div>
+                        <div class="col-md-4">
+                                {{ form.Temp3pm.label(class="form-control-label", id="Temp3pm") }}
+                                {{ form.Temp3pm(class="form-control form-control-sm") }}
+                        </div>
+                    </div>
+                
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
