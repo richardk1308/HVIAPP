@@ -20,15 +20,15 @@ def cardinal_to_degrees(cardinal):
        
 def load_data():
     #with open('weatherAUS.csv') as csv_file:
-    with open('weatherFixed.csv') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=';')
+    with open('weatherAUS.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
         feature_data = []
         location = []
         _location = []
         labels = [] 
         i = 0
         for line in csv_reader:
-            if i != 0:
+            if i != 0 and i<500:
                 feature_tmp = []            
                 for value in line:
                     if value == 'NA':
@@ -49,7 +49,7 @@ def load_data():
 
         
         _location = replaceLingua(feature_data, 0)
-        feature_data.pop(0)
+        #feature_data.pop(0)
         for line in feature_data:
             line[0] = _location.tolist().index(line[0])            
             line[4] = float(cardinal_to_degrees(line[4]))
@@ -64,8 +64,6 @@ def load_data():
             else:
                 labels[indexer]=0
         n_output = 1
-        labels.pop(len(labels)-1)
-
     return mat(feature_data), mat(labels).transpose(), n_output
 
 
@@ -188,32 +186,12 @@ def err_rate(label, pre):
     rate = err / m
     return rate
 
-def load_model(file_center, file_delta, file_w):
-    def get_model(file_name):
-        f = open(file_name)
-        model = []
-        for line in f.readlines():
-            lines = line.strip().split("\t")
-            model_tmp = []
-            for x in lines:
-                model_tmp.append(float(x.strip()))
-            model.append(model_tmp)
-        f.close()
-        return mat(model)
-
-    center = get_model(file_center)
-
-    delta = get_model(file_delta)
-
-    w = get_model(file_w)
-
-    return center, delta, w
 
 print("--------- 1.load data ------------")
 feature, label, n_output = load_data()
 print("--------- 2.training ------------")
 #center, delta, w = bp_train(feature, label, 20, 5000, 0.008, n_output)
-center, delta, w = bp_train(feature, label, 20, 5, 0.008, n_output)
+center, delta, w = bp_train(feature, label, 15, 50, 0.02, n_output)
 print("--------- 3.get prediction ------------")
 result = get_predict(feature, center, delta, w)
 print("result：", (1 - err_rate(label, result)))
